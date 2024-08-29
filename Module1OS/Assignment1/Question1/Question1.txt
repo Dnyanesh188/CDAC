@@ -1,0 +1,32 @@
+Problem 1
+
+A.In  my home directory there are 2 users name as cdac and user1.I don't have a directory linuxassignment so i create it using command : mkdir.linuxassignment
+
+B.In linuxassignment directory I create a .txt file using command : touch file1.txt 
+  there are no contents in the file currently but we can using following commmand to get the content : cat file1.txt
+
+C.By cd linuxassignment command I go to the linuxassignment directory and use this command to make docs directory : mkdir docs.
+
+d.By using the following command rename the file1.txt to file2.txt:mv file1.txt file2.txt.
+  mv command is also used for moving one file from one directory to another.
+
+E.By using chmod u+x file2.txt I changed the permission of files.
+  By using sudo adduser user1 I change the owner of file2.txt file.
+
+F.By typing ls command in linuxassignment I checked all the files and directories.
+
+G.By using the find. -name "*txt" command i check the file in directory and subdirectory.
+  By using grep 'dnyanesh' file2.txt I got the word appearing in red.
+
+H.i) By using date command I got time& date.
+  
+I.i) By using Hostname -I i check the Ip address of the system.
+  ii) By ping 192.168.11.22 I check the connectivity.
+
+J.i)first i install zip using sudo apt install zip. By using zip -r myzip.docs.
+  ii)By using unzip. my.zip -d linuxassignment I extract contents in a new file.
+
+K.i)By using nano file1.txt I can open a file and write in it.
+  ii)I replace a specific word of file1.txt using the command sed -i 's/own/everyone/g' file.txt.
+
+

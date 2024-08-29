@@ -1,0 +1,15 @@
+Question 2:
+
+A.By using the head data.txt command.
+
+B.By using the tail -5 data.txt we can get the last  5 file lines.
+
+C.By using the tail -15 numbers.txt we get the l5 lines.
+
+D.By using tail -3 numbers.txt.
+
+E.By using the command dd if-input.txt of=output.txt conv=ucase we can convert the character in uppercase & check it using cat command.
+
+F.I use command uniq -u duplicate.txt to get only unique lines.
+
+G.I use command uniq -c fruit.txt to get the frequencies of duplicate elements.
