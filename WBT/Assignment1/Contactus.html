@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Us Form</title>
+    <style>
+        body {
+            font-family: 'Poppins', sans-serif;
+            background: linear-gradient(135deg, #74ebd5, #ACB6E5);
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+
+        .contact-form {
+            background: #fff;
+            padding: 40px;
+            border-radius: 15px;
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+            max-width: 450px;
+            width: 100%;
+            text-align: center;
+        }
+
+        .contact-form h2 {
+            margin-bottom: 30px;
+            font-size: 26px;
+            color: #333;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+        }
+
+        .contact-form input[type="text"], 
+        .contact-form input[type="email"], 
+        .contact-form textarea {
+            width: 100%;
+            padding: 15px;
+            margin: 10px 0;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            font-size: 15px;
+            background-color: #f9f9f9;
+            transition: all 0.3s ease;
+        }
+
+        .contact-form input[type="text"]:focus,
+        .contact-form input[type="email"]:focus,
+        .contact-form textarea:focus {
+            border-color: #74ebd5;
+            background-color: #fff;
+            outline: none;
+            box-shadow: 0 0 8px rgba(116, 235, 213, 0.5);
+        }
+
+        .contact-form textarea {
+            height: 120px;
+            resize: none;
+        }
+
+        .contact-form button {
+            padding: 15px 30px;
+            background: linear-gradient(135deg, #74ebd5, #ACB6E5);
+            color: white;
+            border: none;
+            border-radius: 25px;
+            cursor: pointer;
+            font-size: 16px;
+            margin-top: 20px;
+            transition: all 0.3s ease;
+        }
+
+        .contact-form button:hover {
+            background: linear-gradient(135deg, #ACB6E5, #74ebd5);
+            box-shadow: 0 5px 15px rgba(116, 235, 213, 0.4);
+        }
+
+        .social-icons {
+            margin-top: 25px;
+            display: flex;
+            justify-content: center;
+        }
+
+        .social-icons a {
+            margin: 0 15px;
+            transition: transform 0.3s ease;
+        }
+
+        .social-icons a:hover {
+            transform: scale(1.3);
+        }
+
+        .social-icons img {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+            transition: box-shadow 0.3s ease;
+        }
+
+        .social-icons img:hover {
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
+        }
+    </style>
+</head>
+<body>
+
+    <div class="contact-form">
+        <h2>Contact Us</h2>
+        <form action="submit_form.php" method="POST">
+            <input type="text" name="name" placeholder="Your Name" required>
+            <input type="email" name="email" placeholder="Your Email" required>
+            <textarea name="message" placeholder="Your Message" required></textarea>
+            <button type="submit">Send Message</button>
+        </form>
+        
+        <div class="social-icons">
+            <a href="https://github.com/your-profile" target="_blank">
+                <img src="https://image.shutterstock.com/image-vector/github-icon-logo-vector-260nw-1482110657.jpg" alt="GitHub">
+            </a>
+            <a href="https://www.linkedin.com/in/your-profile" target="_blank">
+                <img src="https://image.shutterstock.com/image-vector/linkedin-icon-logo-vector-260nw-600595173.jpg" alt="LinkedIn">
+            </a>
+            <a href="mailto:your-email@gmail.com" target="_blank">
+                <img src="https://image.shutterstock.com/image-vector/gmail-icon-logo-vector-260nw-1482110520.jpg" alt="Gmail">
+            </a>
+        </div>
+    </div>
+
+</body>
+</html>
