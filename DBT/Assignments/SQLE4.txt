@@ -1,0 +1,63 @@
+1)Display the minimum Status in the Supplier table.
+Ans.mysql> select min(Status) as min_status
+    -> from Supplier;
+
+2)Display the maximum Weight in the Parts table.
+Ans.mysql> select max(Weight) as max_weight
+    -> from Parts;
+
+3)Display the average Weight of the Parts.
+Ans.mysql> select avg(Weight) as Avg_weight
+    -> from Parts;
+
+4)Display the total Quantity sold for part ‘P1’.
+Ans.mysql> select sum(Qty) as total_quantity
+    -> from supplierpartsprojects
+    -> where PNo = 'P1';
+
+5)Display the total Quantity sold for each part.
+Ans.mysql> select PNo, sum(Qty) as total_Quantity
+    -> from supplierpartsprojects
+    -> group by PNo;
+
+6)Display the average Quantity sold for each part.
+Ans.mysql> select PNo, avg(Qty) as Avg_Quantity
+    -> from supplierpartsprojects
+    -> group by PNo;
+
+7). Display the maximum Quantity sold for each part, provided the maximum Quantity is greater than 800.
+Ans.mysql> select PNo, Max(Qty) as Maximum_Quantity
+    -> from supplierpartsprojects
+    -> group by PNo
+    -> having max(Qty) > 800;
+
+8)Display the Status and the count of Suppliers with that Status.
+Ans.mysql> select Status, Count(*) as count
+    -> from Supplier
+    -> group by Status;
+
+9)Display the count of Projects going on in different cities.
+Ans.mysql> select City, count(*) as Project_count
+    -> from Projects
+    -> group by City;
+
+10)What is the difference between COUNT(Status) and COUNT(*) ?
+Ans. In Count(Status) it will count only number of status in supplier table but in Count(*) it will print the total count of rows present in the supplier table.
+
+11)Display the Status and the Count of Suppliers with that Status in the following format 
+as shown below:- 
+ 
+Status Count 
+Ten 1 
+Twenty 2 
+Thirty 3
+Ans.mysql> select
+    -> case
+    -> when Status = 10 then 'Ten'
+    -> when Status = 20 then 'Twenty'
+    -> when status = 30 then 'thirty'
+    -> else 'Others'
+    -> end as Status,
+    -> count(*) as Count
+    -> from Supplier
+    -> group by Status;

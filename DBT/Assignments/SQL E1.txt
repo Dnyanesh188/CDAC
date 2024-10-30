@@ -1,0 +1,52 @@
+SQL Exercise-1
+
+1.mysql> create table SEMP(
+    -> EMPNO char (4),
+    -> EMPName char(20),
+    -> BASIC float,
+    -> DEPTNO char(2),
+    -> DEPTHEAD char(4)
+    -> );
+
+2.mysql> create table SDET(
+    -> DEPTNO char(2),
+    -> DEPTNAME char(15)
+    -> );
+
+3.mysql> Insert into SDET(DEPTNO, DEPTNAME)
+    -> values('10','Development'),
+    -> ('20', 'Training');
+
+4.mysql> Insert into SEMP(EMPNO, EMPNAME, BASIC, DEPTNO, DEPTHEAD)
+    -> values('0001', 'SUNIL', 6000, '10', NULL),
+    -> ('0002', 'HIREN', 8000, '20', NULL),
+    -> ('0003', 'ALI', 4000, '10', '0001'),
+    -> ('0004', 'GEORGE', 6000, '20', '0002');
+
+5.mysql> Select * from Supplier;
+
+6.mysql> select SNo, Sname from Supplier;
+
+7.mysql> select Pname, Color from Parts
+      -> where City = 'London';
+
+8.mysql> select * from Supplier where City = 'London';
+
+9.mysql> SELECT * FROM Supplier WHERE City IN ('Paris', 'Athens');
+
+10.mysql> SELECT * FROM Projects WHERE City = 'Athens';
+
+11.mysql> SELECT Pname FROM Parts WHERE Weight BETWEEN 12 AND 14;
+
+12.mysql> select * from Supplier where Status >= 20;
+
+13.mysql> select * from Supplier where city not like 'London';
+
+14.mysql> Select City from Supplier;
+
+15.mysql> select
+    -> Pname,
+    -> Weight As Weight_in_grams,
+    -> Weight * 1000 As Weight_in_milligrams,
+    -> Weight/1000 As Weight_in_Kilograms
+    -> From Parts;

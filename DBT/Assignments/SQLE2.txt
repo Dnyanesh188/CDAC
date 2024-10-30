@@ -1,0 +1,28 @@
+1)Display the Supplier table in the descending order of CITY.
+Ans.mysql> select * from Supplier
+    -> order by City desc;
+
+2)Display the Part Table in the ascending order of CITY and within the city in the ascending order of Part names.
+Ans.mysql> select * from  Parts
+    -> order by City, Pname;
+
+3)Display all the Suppliers with a status between 10 and 20.
+Ans.mysql> select * from Supplier
+    -> where Status between 10 and 20;
+
+4)Display all the Parts and their Weight, which are not in the range of 10 and 15.
+Ans.mysql> select Pname, Weight
+    -> from Parts
+    -> where Weight not between 10 and 15;
+
+5)Display all the Part names starting with the letter ‘S’
+Ans.mysql> select Pname from Parts
+    -> where Pname like 'S%';
+
+6)Display all the Suppliers, belonging to cities starting with the letter ‘L’
+Ans.mysql> select * from Supplier
+    -> where City like 'L%';
+
+7) Display all the Projects, with the third letter in JNAME as ‘n’
+Ans.mysql> select * from projects
+    -> where Jname like '__n%';

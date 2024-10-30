@@ -1,0 +1,22 @@
+1) Assume each salesperson has a 12% commission. Write a query on the orders table that will produce the order number, the salesperson number, and the amount 
+of the salesperson’s commission for that order.
+Ans.mysql> select Onum as order_number,
+    -> Snum as salesperson_number,
+    -> (Amt * 0.12) as commission
+    -> from ORDERS;
+
+2)Write a query on the Customers table that will find the highest rating in each city. Put the output in this form:
+Ans.mysql> select City, Max(Rating) as highest_rating
+    -> from CUSTOMERS
+    -> GROUP BY City;
+
+3)Write a query that lists customers in descending order of rating. Output the rating field first, followed by the customer’s name and number.
+Ans.mysql> select Rating,Cname,Cnum from CUSTOMERS
+    -> ORDER BY Rating desc;
+
+4)Write a query that totals the orders for each day and places the results in descending order.
+Ans.mysql> select Odate as order_date,
+    -> SUM(Amt) as total_amount
+    -> from ORDERS
+    -> GROUP BY Odate
+    -> ORDER BY total_amount desc;

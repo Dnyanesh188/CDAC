@@ -1,0 +1,12 @@
+                         SQL Assignment-3
+
+1.Does ANSI recognize the data type DATE?
+Ans.Yes ANSI SQL recognizes the DATE data type.The standard format for representing a date is YYYY-MM-DD.
+    For example, 2024-10-10.
+
+2.Which subdivision of SQL is used to insert values in tables?
+Ans.The subdivision of SQL used to insert values into tables is called Data Manipulation Language.
+    Commands are:- SELECT: Retrieve data from one or more tables.
+                   UPDATE: Modify existing data in a table.
+                   DELETE: Remove data from a table.
+    

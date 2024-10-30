@@ -1,0 +1,29 @@
+                        SQL Assignment-7
+
+1.Write a query that counts all orders for October 3.
+Ans.mysql> select COUNT(*) AS total_records
+    -> from ORDERS
+    -> where Odate = '1990-10-03';
+
+2.Write a query that counts the number of different non-NULL city values in the Customers table.
+Ans.mysql> select COUNT(distinct City) as unique_cities
+    -> from CUSTOMERS
+    -> where City is not null;
+
+3.
+
+4.Write a query that selects the first customer, in alphabetical order, whose name begins with G.
+Ans.mysql> select Min(Cname) as first_customer
+    -> from CUSTOMERS
+    -> where Cname like 'G%';
+
+5.Write a query that selects the highest rating in each city.
+Ans.mysql> select City, Max(Rating) As highest_rating
+    -> from CUSTOMERS
+    -> GROUP BY City;
+
+6.Write a query that counts the number of salespeople registering orders for each day. (If a salesperson has more than one order on a given day, he or she should be 
+counted only once.).
+Ans.mysql> select Odate, COUNT(DISTINCT Snum) AS num_salespeople
+    -> from ORDERS
+    -> GROUP BY Odate;

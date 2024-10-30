@@ -1,0 +1,45 @@
+1). Display all the Supplier names with the initial letter capital
+Ans.mysql> select upper(substring(Sname,1,1)) + lower(substring(Sname,2)) as capital_name
+    -> from Supplier;
+
+2)Display all the Supplier names in upper case.
+Ans.mysql> select upper(Sname)
+    -> from Supplier;
+
+3)Display all the Supplier names in lower case.
+Ans.mysql> select lower(Sname)
+    -> from Supplier;
+
+4)Display all the Supplier names padded to 25 characters, with spaces on the left.
+Ans.mysql> select lpad(Sname,25,' ') as padded
+    -> from Supplier;
+
+5)Display all the Supplier names (with ‘la’ replaced by ‘ro’).
+Ans.mysql> select replace(Sname,'la','ro') as modified
+    -> from Supplier;
+
+6)Implement the above command such that ‘l’ is replaced with ‘r’ and ‘a’ is replaced with ‘o’.
+Ans.mysql> select replace(replace(Sname, 'l', 'a'), 'r', '0') as text
+    -> from Supplier;
+
+7)Display the Supplier names and the lengths of the names.
+Ans.mysql> select Sname, length(Sname) as name_length
+    -> from Supplier;
+
+8)Use the soundex function to search for a supplier by the name of ‘BLOKE’.
+Ans.mysql> select *
+    -> from Supplier
+    -> where soundex(Sname) = soundex('Bloke');
+
+9)Display the Supplier name and the status (as Ten, Twenty, Thirty, etc.).
+Ans.mysql> select Sname,
+    -> case
+    -> when Status = 10 then 'Ten'
+    -> when Status = 20 then 'Twenty'
+    -> when Status = 30 then 'Thirty'
+    -> else 'Unknown'
+    -> end as Status_exit
+    -> from Supplier;
+
+10). Display the current day
+Ans.mysql> select DAYNAME(CURDATE()) as curr_day;

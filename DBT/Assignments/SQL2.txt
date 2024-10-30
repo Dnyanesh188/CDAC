@@ -1,0 +1,14 @@
+                     SQL Assignment-2
+
+1.Which field of the Customers table is the primary key?
+Ans.The Cnum field of Customers table is unique therefore making it good choice for primary key.
+
+2.What is the 4th column of the Customers table?
+Ans.Rating is the 4th column of the Customers table.
+
+3.What is another word for row? For column?
+Ans.i)Row - Record,Tuple.
+    ii)Column - Field,Attribute.
+
+4.Why isn’t it possible to see the first five rows of a table?
+Ans.Because rows of the tables are scattered (fragmented) all over the DB Server.The order of rows in the output depends upon the row address.
