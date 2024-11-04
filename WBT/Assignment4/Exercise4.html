@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Simulated Network Request with Error Handling</title>
+</head>
+<body>
+    <h1>Simulated Network Request with Error Handling</h1>
+    <p>Open the console to see the response or error message.</p>
+
+    <script>
+        function fetchData(url, callback) {
+            console.log(`Fetching data from ${url}...`);
+            
+            // Simulate a network delay of 2 seconds
+            setTimeout(() => {
+                // Simulate a random error condition
+                const isError = Math.random() < 0.5; // 50% chance of an error
+                
+                if (isError) {
+                    // Pass an error message to the callback if an error occurs
+                    callback("Error: Unable to fetch data");
+                } else {
+                    // Pass a simulated response if no error occurs
+                    const response = `Response from ${url}`;
+                    callback(null, response); // First argument is null for no error
+                }
+            }, 2000);
+        }
+
+        // Call fetchData with a URL and an anonymous callback function
+        fetchData("https://example.com/api/data", (error, response) => {
+            if (error) {
+                console.error(error); // Log the error if it occurs
+            } else {
+                console.log(response); // Log the response if successful
+            }
+        });
+    </script>
+</body>
+</html>

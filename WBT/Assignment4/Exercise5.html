@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Data Fetching and Processing</title>
+</head>
+<body>
+    <h1>Data Fetching and Processing Simulation</h1>
+    <p>Open the console to see the data fetching and processing results.</p>
+
+    <script>
+        // fetchData function with error handling
+        function fetchData(url, callback) {
+            console.log(`Fetching data from ${url}...`);
+            
+            setTimeout(() => {
+                const isError = Math.random() < 0.5; // Simulate 50% chance of an error
+                
+                if (isError) {
+                    callback("Error: Unable to fetch data");
+                } else {
+                    const response = `Response from ${url}`;
+                    callback(null, response); // First argument null indicates no error
+                }
+            }, 2000);
+        }
+
+        // processData function to modify and log the fetched data
+        function processData(data, callback) {
+            console.log("Processing data...");
+            
+            setTimeout(() => {
+                const processedData = `${data} - Processed`; // Simulate data modification
+                callback(processedData);
+            }, 1000);
+        }
+
+        // Chain fetchData and processData
+        fetchData("https://example.com/api/data", (error, response) => {
+            if (error) {
+                console.error(error); // Log the error if fetchData fails
+            } else {
+                processData(response, (processedData) => {
+                    console.log(processedData); // Log the processed data
+                });
+            }
+        });
+    </script>
+</body>
+</html>
