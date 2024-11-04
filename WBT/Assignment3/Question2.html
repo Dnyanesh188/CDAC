@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Form Submission</title>
+  <style>
+    /* Basic styling for the form */
+    form {
+      max-width: 300px;
+      margin: auto;
+    }
+    input, button {
+      width: 100%;
+      padding: 10px;
+      margin: 5px 0;
+    }
+    .output {
+      margin-top: 20px;
+      font-size: 16px;
+      color: rgb(83, 55, 3);
+      text-align: center;
+    }
+    *{
+        background-color: rgb(216, 159, 197);
+    }
+  </style>
+</head>
+<body>
+
+  <h2 style="text-align: center;">User Information Form</h2>
+  <form id="userForm">
+    <label for="firstName">First Name:</label>
+    <input type="text" id="firstName" name="firstName" required>
+    
+    <label for="lastName">Last Name:</label>
+    <input type="text" id="lastName" name="lastName" required>
+    
+    <label for="contactNo">Contact No.:</label>
+    <input type="tel" id="contactNo" name="contactNo" required>
+    
+    <label for="emailId">Email ID:</label>
+    <input type="email" id="emailId" name="emailId" required>
+    
+    <button type="button" onclick="displayFormData()">Submit</button>
+  </form>
+
+  <!-- Output Section -->
+  <div class="output" id="output"></div>
+
+  <script>
+    function displayFormData() {
+      // Get values from the form fields
+      const firstName = document.getElementById('firstName').value;
+      const lastName = document.getElementById('lastName').value;
+      const contactNo = document.getElementById('contactNo').value;
+      const emailId = document.getElementById('emailId').value;
+      
+      // Create output text
+      const outputText = `
+        <p><strong>First Name:</strong> ${firstName}</p>
+        <p><strong>Last Name:</strong> ${lastName}</p>
+        <p><strong>Contact No.:</strong> ${contactNo}</p>
+        <p><strong>Email ID:</strong> ${emailId}</p>
+      `;
+      
+      // Display the form values on the page
+      document.getElementById('output').innerHTML = outputText;
+    }
+  </script>
+
+</body>
+</html>

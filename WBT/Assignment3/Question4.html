@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Highlight Bold Words on Hover</title>
+    <style>
+        .highlight {
+            color: red; 
+        }
+    </style>
+</head>
+<body>
+
+<p>
+    <a href="#" id="hoverLink">On mouse over here bold words of the following paragraph will be highlighted</a>
+</p>
+
+<p>
+    We have just started this section for the <b>users</b> (<b>beginner</b> to <b>intermediate</b>) who want to work with various <b>JavaScript</b> problems and write scripts online to test their <b>JavaScript</b> skill.
+</p>
+
+<script>
+    
+    const hoverLink = document.getElementById("hoverLink");
+    const boldElements = document.querySelectorAll("b");
+
+    
+    function highlightBoldWords() {
+        boldElements.forEach(bold => bold.classList.add("highlight"));
+    }
+
+   
+    function removeHighlightBoldWords() {
+        boldElements.forEach(bold => bold.classList.remove("highlight"));
+    }
+
+    
+    hoverLink.addEventListener("mouseover", highlightBoldWords);
+    hoverLink.addEventListener("mouseout", removeHighlightBoldWords);
+</script>
+
+</body>
+</html>
